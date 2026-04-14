@@ -24,7 +24,7 @@
                 "input": "projects/angular-sample/public"
               }
             ],
-            "styles": ["projects/angular-sample/src/styles.css"]
+            "styles": ["projects/angular-sample/src/styles.css", "@flexmonster/flexmonster/flexmonster.css"]
           },
           "configurations": {
             "production": {

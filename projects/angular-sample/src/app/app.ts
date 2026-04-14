@@ -1,14 +1,12 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { FlexmonsterComposite } from '@flexmonster/angular';
+import { Component } from '@angular/core';
+import { FMFlexmonster } from '@flexmonster/angular';
 import type { StateInputParams } from '@flexmonster/flexmonster';
-import '@flexmonster/flexmonster/flexmonster.css';
 
 @Component({
   selector: 'app-root',
-  imports: [FlexmonsterComposite],
+  imports: [FMFlexmonster],
   templateUrl: './app.html',
-  styleUrl: './app.css',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  styleUrls: ['./app.css'],
 })
 export class App {
   public state: StateInputParams = {
