@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FMFlexmonster } from '@flexmonster/angular';
-import type { StateInputParams } from '@flexmonster/flexmonster';
+import type { StateInputParams } from '@flexmonster/js';
 
 @Component({
   selector: 'pivot-table-demo',
@@ -25,24 +25,24 @@ export class PivotTableDemo {
     slice: {
       rows: [
         {
-          name: 'Year',
+          fieldName: 'Year',
         },
         {
-          name: 'Gender',
+          fieldName: 'Gender',
         },
         {
-          name: 'Name',
+          fieldName: 'Name',
         },
       ],
       values: [
         {
-          name: 'Count',
+          fieldName: 'Count',
           aggregation: 'sum',
         },
       ],
       columns: [
         {
-          name: 'State',
+          fieldName: 'State',
         },
       ],
     },
