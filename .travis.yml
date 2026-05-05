@@ -1,0 +1,14 @@
+language: node_js
+node_js: '22'
+dist: focal
+
+install:
+  - cd "$TRAVIS_BUILD_DIR" && npm ci
+
+before_script:
+  - cd "$TRAVIS_BUILD_DIR" && npx ng serve --configuration production --port 4200 &
+  - npx --yes wait-on "http://localhost:4200" --timeout 60000
+  - git clone "https://github.com/flexmonster/framework-samples-tests" "$TRAVIS_BUILD_DIR/framework-samples-tests"
+  - cd "$TRAVIS_BUILD_DIR/framework-samples-tests" && npm ci && npx playwright install --with-deps chromium
+script:
+  - cd "$TRAVIS_BUILD_DIR/framework-samples-tests" && BASE_URL="http://localhost:4200" npm test
