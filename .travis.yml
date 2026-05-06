@@ -12,3 +12,10 @@ before_script:
   - cd "$TRAVIS_BUILD_DIR/framework-samples-tests" && npm ci && npx playwright install --with-deps chromium
 script:
   - cd "$TRAVIS_BUILD_DIR/framework-samples-tests" && BASE_URL="http://localhost:4200" npm test
+
+notifications:
+  slack:
+    rooms:
+      - secure: "GtkTma9J6VxB7soGWcJ39A09fpVp6/+hL3nq5DD3bd4OOfl5npW3OIIaYrd8c0CCa+1o0fLUpzfUzTvSzNVJ/nmNwpP7uPeMUXkm2CT22vSzBfeRcismc0fwbk0ENl5qqSKoDed6HqvkQMb+XYkTfDlzwDNnWdDcHYJ55fQv2bx8SRBzJ5hKjD32FRCGrOHp5bQQBR1MiG3BqmL7/eL0GRQnoUN9JqzF5juJPPJU+CDjPFY2nx7vAE5+bVvj8Ph6jfxwqMvFY64vs7dvcoIIMm/hd7ZA9DrnfvesVTknBV8bmgNfU2taAKxwei9qL8dZGH5h/rdx5is+xYDlRely79RfGdsS0Q07TWzdc1nTcCRxKcQHi4ZiQUsgRa3P0zZG9r0Glaqr9H2D6rnRrli2GVP2VVrvS0Zptq3612lJq5z39nb9fWGAbu3ONL5/+mHzVGaWAPpJcJp3F1QQzd0WUYxnaFzAi/k71B4lPEq2SbE56/D4iQZ5lO+YF5i+5ki3Y/rj0hob8MGKaWNyHE6vK8+KwVwY4IDDftOGP58eHiPuqU0QHQOdoi1fkqglmzUCbnOslv1E+iikf3XnfiW3CPnaLDgM+5elpuQSaVjWFaDJhc5oXcXQ/NpwhXm1QJHi330+fAJnpOEPTvfe8ao8OGDI5TPJF9arugU5CXDbuO4="
+    on_success: always
+    on_failure: always
