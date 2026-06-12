@@ -3,7 +3,7 @@ node_js: '22'
 dist: focal
 
 install:
-  - cd "$TRAVIS_BUILD_DIR" && npm ci
+  - cd "$TRAVIS_BUILD_DIR" && npm i
 
 before_script:
   - cd "$TRAVIS_BUILD_DIR" && npx ng serve --configuration production --port 4200 &
