@@ -1,7 +1,9 @@
 language: node_js
 node_js: '22'
 dist: focal
-
+cache:
+  npm: false
+  
 install:
   - cd "$TRAVIS_BUILD_DIR" && npm i
 
